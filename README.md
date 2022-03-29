@@ -3,4 +3,4 @@ This project is basically a CRUD about students,the main and important thing is 
 ## Requirements
     Laravel >= 8
     PHP >= 8.1
-![Create](C:\Users\DELL\Desktop)
+![Create](http::C/Users/DELL/Desktop)

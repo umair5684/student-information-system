@@ -3,3 +3,4 @@ This project is basically a CRUD about students,the main and important thing is 
 ## Requirements
     Laravel >= 8
     PHP >= 8.1
+![create](https://user-images.githubusercontent.com/77715483/160618046-eefe7eee-0cd9-4e98-8930-a386071484d5.PNG)

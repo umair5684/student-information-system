@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\StoreStudents;
 use App\Jobs\SendMailJob;
 use App\Models\Student;
 use http\Client\Curl\User;
@@ -60,7 +61,7 @@ class StudentController extends Controller
             ->with('success', 'Student created successfully.');
     }
 
-    public function storeCsv(Request $request)
+    public function storeCsv(Request $request, StoreStudents $storeStudents)
     {
         request()->validate([
             'file' => 'required|file|mimes:csv'
@@ -76,9 +77,10 @@ class StudentController extends Controller
             $csv[] = array_combine($header, $row);
         }
 
-        $created = 0;
+        $data = [];
+
         foreach ($csv as $value) {
-            $data = [
+            $data[] = [
                 'fullname' => $value['fullname'],
                 'rollno' => $value['rollno'],
                 'program' => $value['program'],
@@ -87,18 +89,9 @@ class StudentController extends Controller
                 'address' => $value['address'],
                 'email' => $value['email'],
             ];
-
-            $validator = Validator::make($data, Student::$rules);
-
-            if ($validator->validated()) {
-                $student = Student::create($data);
-
-                if ($student) {
-                    SendMailJob::dispatch($student);
-                    $created++;
-                }
-            }
         }
+
+        $created = $storeStudents->save($data);
 
         return back()->with('success', $created . ' records are created.');
     }
@@ -110,9 +103,10 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-public function indexForm(){
-    return view('emails.form');
-}
+    public function indexForm()
+    {
+        return view('emails.form');
+    }
 
     public function show($id)
     {

@@ -30,7 +30,7 @@ Route::resource('customers', CustomerController::class);
 
 Route::get('csv-upload', [StudentController::class, 'indexForm'])->name('student-csv-upload');
 Route::post('csv-upload', [StudentController::class, 'storeCsv'])->name('student-csv-upload');
-Route::resource('students', StudentController::class);
+Route::resource('students', StudentController::class)->middleware(['auth']);
 Route::get('/email',function(){
 
     return new WelcomeMAil();

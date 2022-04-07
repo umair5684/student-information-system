@@ -42,7 +42,7 @@ class Student extends Model
      *
      * @var array
      */
-    protected $fillable = ['fullname','rollno','program','semester','phone_no','address','email','file'];
+    protected $fillable = ['fullname','rollno','program','semester','phone_no','address','email',];
 
 
 

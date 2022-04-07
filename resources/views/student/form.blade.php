@@ -18,7 +18,11 @@
 <div class=" d-flex justify-content-center">
     <div class="col-3">
         <label for="program" class="form-label">Program</label>
+<<<<<<< HEAD
         <input type="text" class="form-control" name="program" value="{{ $student->program }}">
+=======
+        <input type="text" class="form-control" name="program" value="{{ $student->program}}">
+>>>>>>> 15e595670ec0fc5cfc366438a7cca5698df7f961
     </div>
 </div>
 <div class=" d-flex justify-content-center">
@@ -41,13 +45,21 @@
 <div class=" d-flex justify-content-center">
     <div class="col-3">
         <label for="address" class="form-label">Address</label>
+<<<<<<< HEAD
         <input type="text" class="form-control" name="address" value="{{ $student->address }}">
+=======
+        <input type="text" class="form-control" name="address" value="{{ $student->address') }}">
+>>>>>>> 15e595670ec0fc5cfc366438a7cca5698df7f961
     </div>
 </div>
     <div class=" d-flex justify-content-center">
         <div class="col-3">
             <label for="email" class="form-label">Email</label>
+<<<<<<< HEAD
             <input type="text" class="form-control" name="email" value="{{ $student->email }}">
+=======
+            <input type="text" class="form-control" name="email" value="{{$student->email }}">
+>>>>>>> 15e595670ec0fc5cfc366438a7cca5698df7f961
         </div>
 </div>
 <div class=" d-flex justify-content-center">
